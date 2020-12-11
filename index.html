@@ -108,8 +108,32 @@
                 
             }
 
+            // function that sets the numbers based on weather or not an operator has been selected
+            $(".number").on("click", function() {
+                // checks if a calulation has been made
+                if (isCalculated) {
+                    return false;
+                }
+                if (isOperatorSelected) {
+                    numberTwo += $(this).val();
+                    $("#second-number").text(numberTwo)
+                }
+                else {
+                    numberOne += $(this).val();
+                    $("#first-number").text(numberOne);
+                }
+            })
 
-            $("#first-number").empty();
+            // function that sets the operator in the calculation
+            $(".operator").on("click", function() {
+                if (!numberOne || !numberTwo) {
+                    return false;
+                }
+
+                isOperatorSelected = true;
+                operator = $(this).val();
+                $("#operator").text(operator);
+            })
         });
 
     </script>
