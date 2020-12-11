@@ -105,6 +105,7 @@
             $("#operator").empty();
             $("#result").empty();
                 
+                console.log( numberOne, numberTwo, operator, isOperatorSelected, isCalculated)
             }
 
             // function that sets the numbers based on weather or not an operator has been selected
@@ -116,10 +117,12 @@
                     return false;
                 }
                 if (isOperatorSelected) {
+                    console.log($(this).val())
                     numberTwo += $(this).val();
                     $("#second-number").text(numberTwo)
                 }
                 else {
+                    console.log($(this).val())
                     numberOne += $(this).val();
                     $("#first-number").text(numberOne);
                 }
@@ -134,19 +137,21 @@
                 }
 
                 isOperatorSelected = true;
+                operator = $(this).val();
+
                 if ($(this).val() === "plus") {
-                    operator = "+"
+                    op = "+"
                 } else if($(this).val() === "minus") {
-                    operator = "-"
+                    op = "-"
                 } else if($(this).val() === "times") {
-                    operator = "x"
+                    op = "x"
                 } else if($(this).val() === "divide") {
-                    operator = "/"
+                    op = "/"
                 } else if($(this).val() === "power") {
-                    operator = "^"
+                    op = "^"
                 }
 
-                $("#operator").text(operator);
+                $("#operator").text(op);
             });
 
             // onclick function for equal this converts the values to numbers and actually executes the problem
@@ -180,7 +185,13 @@
                 $("#result").text(total);
             });
 
+            //  calls init when we hit clear
+            $(".clear").on("click", function() {
+                init();
+            })
 
+            // calls the init function on the page load
+            init();
 
         });
 
