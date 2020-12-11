@@ -97,7 +97,6 @@
                 var numberOne = "";
                 var numberTwo = "";
                 var operator = "";
-                var total = "";
                 var isOperatorSelected = false;
                 var isCalculated = false;
             
@@ -110,6 +109,8 @@
 
             // function that sets the numbers based on weather or not an operator has been selected
             $(".number").on("click", function() {
+                console.log(isCalculated)
+                console.log(isOperatorSelected)
                 // checks if a calulation has been made
                 if (isCalculated) {
                     return false;
@@ -122,18 +123,65 @@
                     numberOne += $(this).val();
                     $("#first-number").text(numberOne);
                 }
-            })
+            });
 
             // function that sets the operator in the calculation
             $(".operator").on("click", function() {
-                if (!numberOne || !numberTwo) {
+                console.log($(this).val())
+                if (!numberOne || isCalculated) {
+                    console.log("broken")
                     return false;
                 }
 
                 isOperatorSelected = true;
-                operator = $(this).val();
+                if ($(this).val() === "plus") {
+                    operator = "+"
+                } else if($(this).val() === "minus") {
+                    operator = "-"
+                } else if($(this).val() === "times") {
+                    operator = "x"
+                } else if($(this).val() === "divide") {
+                    operator = "/"
+                } else if($(this).val() === "power") {
+                    operator = "^"
+                }
+
                 $("#operator").text(operator);
-            })
+            });
+
+            // onclick function for equal this converts the values to numbers and actually executes the problem
+            $(".equal").on("click", function() {
+
+                if(isCalculated) {
+                    return false;
+                }
+
+                // sets the is calculated to true so another problem cannot be solved without init()
+                isCalculated = true;
+
+                // values are vurrently strings so use parseInt()
+                numberOne = parseInt(numberOne);
+                numberTwo = parseInt(numberTwo);
+
+
+                // need to add functions for basic equations 
+                if(operator === "minus") {
+                    total = numberOne - numberTwo; 
+                } else if(operator === "plus") {
+                    total = numberOne + numberTwo;
+                } else if(operator === "times") {
+                    total = numberOne * numberTwo;
+                } else if(operator === "divide") {
+                    total = numberOne / numberTwo;
+                } else if(operator === "power") {
+                    total = Math.pow(numberOne, numberTwo);
+                }
+
+                $("#result").text(total);
+            });
+
+
+
         });
 
     </script>
