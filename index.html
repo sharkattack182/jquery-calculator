@@ -5,7 +5,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/YOUR_PATH/favicon.ico" rel="icon" type="image/x-icon" />
+    <link
+        href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMTNTv/EzU7/xM1O/8TNTv/EzU7/xM1O/8TNTv/EzU7/xM1O/8TNTv/EzU7/xM1O/8TNTv8AAAAAAAAAAAAAAADEzU7/AAAAAAAAAADEzU7/AAAAAAAAAADEzU7/AAAAAAAAAADEzU7/AAAAAAAAAADEzU7/AAAAAAAAAAAAAAAAxM1O/wAAAAAAAAAAxM1O/wAAAAAAAAAAxM1O/wAAAAAAAAAAxM1O/wAAAAAAAAAAxM1O/wAAAAAAAAAAAAAAAMTNTv/EzU7/xM1O/8TNTv/EzU7/xM1O/8TNTv/EzU7/xM1O/8TNTv8AAAAAAAAAAMTNTv8AAAAAAAAAAAAAAADEzU7/AAAAAAAAAADEzU7/AAAAAAAAAADEzU7/AAAAAAAAAADEzU7/AAAAAAAAAADEzU7/AAAAAAAAAAAAAAAAxM1O/wAAAAAAAAAAxM1O/wAAAAAAAAAAxM1O/wAAAAAAAAAAxM1O/wAAAAAAAAAAxM1O/wAAAAAAAAAAAAAAAMTNTv/EzU7/xM1O/8TNTv/EzU7/xM1O/8TNTv/EzU7/xM1O/8TNTv/EzU7/xM1O/8TNTv8AAAAAAAAAAAAAAADEzU7/AAAAAAAAAADEzU7/AAAAAAAAAADEzU7/AAAAAAAAAADEzU7/AAAAAAAAAADEzU7/AAAAAAAAAAAAAAAAxM1O/wAAAAAAAAAAxM1O/wAAAAAAAAAAxM1O/wAAAAAAAAAAxM1O/wAAAAAAAAAAxM1O/wAAAAAAAAAAAAAAAMTNTv/EzU7/xM1O/8TNTv/EzU7/xM1O/8TNTv/EzU7/xM1O/8TNTv/EzU7/xM1O/8TNTv8AAAAAAAAAAAAAAADEzU7/SsOLDgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAErDiw/EzU7/AAAAAAAAAAAAAAAAxM1O/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxM1O/wAAAAAAAAAAAAAAAMTNTv9Kw4sPAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASsOLD8TNTv8AAAAAAAAAAAAAAADEzU7/xM1O/8TNTv/EzU7/xM1O/8TNTv/EzU7/xM1O/8TNTv/EzU7/xM1O/8TNTv/EzU7/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAIADAAC22wAAttsAAIAbAAC22wAAttsAAIADAAC22wAAttsAAIADAAC/+wAAv/sAAL/7AACAAwAA//8AAA=="
+        rel="icon" type="image/x-icon" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -97,7 +99,7 @@
             var isOperatorSelected = false;
             var isCalculated = false;
 
-            
+
 
             // Initilaizes the calculator and clears the content  
             function init() {
@@ -106,18 +108,18 @@
                 var operator = "";
                 var isOperatorSelected = false;
                 var isCalculated = false;
-            
-            $("#first-number").empty();
-            $("#second-number").empty();
-            $("#operator").empty();
-            $("#equal").empty();
-            $("#result").empty();
-                
-                console.log( numberOne, numberTwo, operator, isOperatorSelected, isCalculated)
+
+                $("#first-number").empty();
+                $("#second-number").empty();
+                $("#operator").empty();
+                $("#equal").empty();
+                $("#result").empty();
+
+                console.log(numberOne, numberTwo, operator, isOperatorSelected, isCalculated)
             }
 
             // function that sets the numbers based on weather or not an operator has been selected
-            $(".number").on("click", function() {
+            $(".number").on("click", function () {
                 console.log(isCalculated)
                 console.log(isOperatorSelected)
                 // checks if a calulation has been made
@@ -137,7 +139,7 @@
             });
 
             // function that sets the operator in the calculation
-            $(".operator").on("click", function() {
+            $(".operator").on("click", function () {
                 console.log($(this).val())
                 if (!numberOne || isCalculated) {
                     console.log("broken")
@@ -149,13 +151,13 @@
 
                 if ($(this).val() === "plus") {
                     op = "+"
-                } else if($(this).val() === "minus") {
+                } else if ($(this).val() === "minus") {
                     op = "-"
-                } else if($(this).val() === "times") {
+                } else if ($(this).val() === "times") {
                     op = "x"
-                } else if($(this).val() === "divide") {
+                } else if ($(this).val() === "divide") {
                     op = "/"
-                } else if($(this).val() === "power") {
+                } else if ($(this).val() === "power") {
                     op = "^"
                 }
 
@@ -163,9 +165,9 @@
             });
 
             // onclick function for equal this converts the values to numbers and actually executes the problem
-            $(".equal").on("click", function() {
+            $(".equal").on("click", function () {
 
-                if(isCalculated) {
+                if (isCalculated) {
                     return false;
                 }
 
@@ -179,15 +181,15 @@
 
 
                 // need to add functions for basic equations 
-                if(operator === "minus") {
-                    total = numberOne - numberTwo; 
-                } else if(operator === "plus") {
+                if (operator === "minus") {
+                    total = numberOne - numberTwo;
+                } else if (operator === "plus") {
                     total = numberOne + numberTwo;
-                } else if(operator === "times") {
+                } else if (operator === "times") {
                     total = numberOne * numberTwo;
-                } else if(operator === "divide") {
+                } else if (operator === "divide") {
                     total = numberOne / numberTwo;
-                } else if(operator === "power") {
+                } else if (operator === "power") {
                     total = Math.pow(numberOne, numberTwo);
                 }
 
@@ -195,7 +197,7 @@
             });
 
             //  calls init when we hit clear
-            $(".clear").on("click", function() {
+            $(".clear").on("click", function () {
                 init();
             })
 
