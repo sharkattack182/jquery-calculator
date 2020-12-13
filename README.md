@@ -7,9 +7,9 @@ As I continue my coding journey I am going back over each of my assignments from
 The actual logic that was required to make the project run was actually fairly simple to write and didnt take very much time. I used basic Jquery and event listeners along with some if statements to write a majority of te logic the rest was basic testing with console.log() and dynamically rendering values into preset elements with jQuery. Once the logic was written out I decided to take the extra step of restyling the face of the calculator. While the original design was responsive, the practicality of the design was very off. The calculator just got smaller which made it virtually useless on a small screen. I opened a new doc and designed the new face mainly using bootstrap along with a few media queries I built. Overall I am happy with the design and It allows me to utilize some styling skills while also being able to have a product that stands out from other students in my cohort. 
 
 ## Languages 
-JavaScript <img src="https://progress-bar.dev/0">
+JavaScript <img src="https://progress-bar.dev/30">
 <br>
-HTML <img src="https://progress-bar.dev/85">
+HTML <img src="https://progress-bar.dev/55">
 <br>
 CSS <img src="https://progress-bar.dev/15">
 
